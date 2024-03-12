@@ -1,6 +1,6 @@
 
 
-         <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -241,7 +241,7 @@
 
  <section class="main" id="today">
         <div class="main-top">
-                <h1 style="color: #fff; text-decoration:underline; margin-bottom:20px;margin-left:250px;">Today </h1>
+                <h1 style="color: #fff; text-decoration:underline; margin-bottom:20px;margin-left:250px;">Total </h1>
             </div>
             <div class="thead">
         <div class="th">
@@ -258,7 +258,7 @@
         <?php
     include 'connect.php';
     $d= date("Y-m-d");
-    $sql = "SELECT * FROM `selling` WHERE date='$d'";
+    $sql = "SELECT * FROM `selling`  ";
     $result = mysqli_query($con, $sql);
     $total=0;
     if ($result) 
