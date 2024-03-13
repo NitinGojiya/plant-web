@@ -263,7 +263,7 @@ button::before {
 }
 
 button::after {
-  content: "Shop";
+  content: "Submit";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -303,6 +303,16 @@ button::after {
   }
 }
         /* button end */
+        .txt{
+            width: 400px;
+            border: none;
+            height: 50px;
+            margin-top: 10px;
+            font-size: 1.3rem;
+        }
+        .txt:hover{
+            border: 2px #DE6F37 solid ;
+        }
     </style>
 </head>
 
@@ -320,11 +330,13 @@ button::after {
         <div class="main-content">
             <!-- Welcome Section -->
             <div class="welcome-section">
-            <p id="wel2">Hello User,
+           
               
-            <?php echo $username ?></p>
-                <p id="wel"><span>W</span>elcome <span>T</span>o <span>P</span>lant <span>W</span>ebsite</p>
+            
+                <p id="wel"> Contact us</p>
                 <p id="wel2">Explore a wide variety of plants for your home and garden.</p>
+                <p id="wel2"><input type="text" class="txt"  placeholder="Enter Your name"></p>
+                <p id="wel2"><input type="text" class="txt" placeholder="Enter Your Number "></p>
                 <p>
                     <a href="cate.php">
                 <div class="container-button">

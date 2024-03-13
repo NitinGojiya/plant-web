@@ -91,7 +91,7 @@ if (isset($_POST['login'])) {
 
 <body>
     <div class="container">
-        <form action="login.php" method="post">
+        <form action="index.php" method="post">
             <h2>Login</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -100,6 +100,7 @@ if (isset($_POST['login'])) {
             <button type="submit" name="login">Login</button>
         </form>
         <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+        <p>Admin Login? <a href="adminlogin.php">Admin</a></p>
     </div>
 </body>
 

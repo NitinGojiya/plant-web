@@ -235,13 +235,13 @@
             <!-- Categories dropdown content -->
            
         </li>
-        
+        <li><a href="alogout.php">Logout</a></li>
     </ul>
  </div>
 
  <section class="main" id="today">
         <div class="main-top">
-                <h1 style="color: #fff; text-decoration:underline; margin-bottom:20px;margin-left:250px;">Total </h1>
+                <h1 style="color: #fff; text-decoration:underline; margin-bottom:20px;margin-left:250px;">Total Sell </h1>
             </div>
             <div class="thead">
         <div class="th">

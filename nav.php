@@ -57,7 +57,7 @@
 <div class="left-navigation">
     <ul>
     <li><a  href="home.php">Home</a></li>
-        <li><a  href="profile.php">Profile</a></li>
+        <!-- <li><a  href="profile.php">Profile</a></li> -->
         <li><a href="cart.php">My Orders</a></li>
        
         <li>

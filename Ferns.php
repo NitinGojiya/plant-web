@@ -160,7 +160,7 @@ header.sticky{
      $pass="";
      $db="flower";
      $conn=mysqli_connect($host,$user,$pass,$db);
-     $sql="SELECT * FROM `plant` where type='Flowering Plants'";
+     $sql="SELECT * FROM `plant` where type='Ferns'";
      $result=mysqli_query($conn,$sql);
      while($row=mysqli_fetch_array($result))
      {

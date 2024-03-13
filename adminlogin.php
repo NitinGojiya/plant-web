@@ -1,30 +1,30 @@
 <?php
-include 'connect.php';
-if (isset($_POST['signup'])){
-   
 
+
+if (isset($_POST['login'])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
-
-    $sql = "INSERT INTO `user`(`username`, `password`) VALUES ('$username','$password')";
-    $result=mysqli_query($con,$sql);
-    if($result)
-    {
-        header("location:index.php");
-    }
-}
+ 
+   if ( $username =='admin' &&  $password == '123') {
+          
+          
+            header('location:admin.php');
+            
+      
+}}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Sign Up</title>
-	<style>
+    <title>Login</title>
+    <style>
         body {
-			background-image: url('background.jpg');
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -72,7 +72,7 @@ if (isset($_POST['signup'])){
             color: #fff;
             padding: 10px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
         }
 
@@ -86,19 +86,20 @@ if (isset($_POST['signup'])){
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <form action="signup.php" method="post">
-            <h2>Sign Up</h2>
+        <form action="adminlogin.php" method="post">
+            <h2>Admin Login</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit" name="signup">Sign Up</button>
+            <button type="submit" name="login">Login</button>
         </form>
-        <p>Already have an account? <a href="index.php">Login</a></p>
+       
+        <p>Admin Login? <a href="adminlogin.php">Admin</a></p>
     </div>
 </body>
-</html>
 
 </html>

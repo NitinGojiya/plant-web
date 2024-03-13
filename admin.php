@@ -235,6 +235,7 @@
             <!-- Categories dropdown content -->
            
         </li>
+        <li><a href="alogout.php">Logout</a></li>
         
     </ul>
  </div>
@@ -283,7 +284,7 @@
         ?>
     </div>
     <div class="contain">
-            <div>Total:<?php echo $total; ?></div>
+            <div>Today Total: Rs.<?php echo $total; ?></div>
     </div>
         </section>
       

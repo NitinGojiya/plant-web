@@ -5,6 +5,23 @@ session_start();
 $username=$_SESSION['username'];
 
 ?>
+<?php
+if(isset($_POST['delete']))
+{
+  include 'connect.php';
+$id=$_POST['id'];
+
+
+
+$sql="delete from plant where id='$id'";
+$result=mysqli_query($con,$sql);
+if($result)
+{
+    header('location:delete_plant.php');
+}
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -130,6 +147,13 @@ margin-bottom: 10px;
         margin-left: 350px;
         margin-top: 60px;
     }
+    .plant{
+        margin-left: 350px;
+        margin-top: 20px;  
+    }
+    table th{
+        width: 150px;
+    }
 </style>
 </head>
 
@@ -154,57 +178,39 @@ margin-bottom: 10px;
  </div>	
 <div class="insert">
 	
-<form action="insert_plant.php" method="post">
+<form action="delete_plant.php" method="post">
 	<div id="DebitCard"  class="pay">
-		<h3>Insert Plant Detail</h3>
-		<p>Plant Name</p>
-        <input type="text" name="name" placeholder="Plant Name" class="in">
-        <p>Plant Type</p>
-		<select name="type"  class="in">
-         <option>Flowering Plants</option>
-                <option>Succulents</option>
-                <option>Trees</option>
-                <option>Herbs</option>
-                <option>Ferns</option>
-                <option>Shrubs</option>
-        </select>
-        <p>Photo</p>
-		<input type="text" name="photo" placeholder="Parth of the photo" class="in">
-        <p>Price</p>
-		<input type="text" name="price" placeholder="Price" class="in">
-     
-     
-	
+		<h3>Delete Plant Detail</h3>
+		<p>Enter Plant Id</p>
+        <input type="text" name="id" placeholder="Plant Id" class="in">
+        <br>
 		
-	
-		<br>
-		
-        <input type="submit" value="Insert" name="Insert" class="btn">
+        <input type="submit" value="Delete" name="delete" class="btn">
        
 		<input type="reset" value="Reset" class="btn">
 	</div>
 
-	
 	</form>
-    </div>
+ </div>
+ <div class="plant">
+ <caption>Your PLant Details</caption>
+ <table border="1">
+    <tr>
+    <th>id</th>
+    <th>Name</th>
+    </tr>
+ 
+        <?php
+        include 'connect.php';
+        $sql="select * from plant";
+        $r=mysqli_query($con,$sql);
+        while ($row = mysqli_fetch_array($r)) {
+        ?>   <tr>
+        <th><?php echo $row['id'];?></th>
+        <th><?php echo $row['name'];?></th>
+    </tr>
+    <?php } ?>
+  </table>
+ </div>
 </body>
 </html>
-<?php
-if(isset($_POST['Insert']))
-{
-  include 'connect.php';
-$name=$_POST['name'];
-$type=$_POST['type'];
-$photo=$_POST['photo'];
-$price=$_POST['price'];
-
-
-$sql="INSERT INTO `plant`( `name`,`type`, `photo`, `price`) VALUES ('$name','$type','$photo','$price')";
-$result=mysqli_query($con,$sql);
-if($result)
-{
-echo '<script>alert("PLant Insert");</script>';
-}
-}
-
-?>
